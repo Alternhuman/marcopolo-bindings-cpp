@@ -244,7 +244,7 @@ int Marco::marco(std::vector<Node>& nodes, int max_nodes, std::vector<std::strin
 	bzero((char *) &(bind_addr), sizeof(bind_addr));
 
 	bind_addr.sin_family = AF_INET;
-	bind_addr.sin_port = htons(PORT);
+	bind_addr.sin_port = htons(MARCOBINDINGPORT);
 	bind_addr.sin_addr.s_addr = inet_addr("127.0.1.1");
 	size_addr = sizeof(bind_addr);
 
@@ -371,7 +371,7 @@ int Marco::request_for(std::vector<Node>&nodes, std::string service, int max_nod
 		bzero((char *) &(bind_addr), sizeof(bind_addr));
 
 		bind_addr.sin_family = AF_INET;
-		bind_addr.sin_port = htons(PORT);
+		bind_addr.sin_port = htons(MARCOBINDINGPORT);
 		bind_addr.sin_addr.s_addr = inet_addr("127.0.1.1");
 		size_addr = sizeof(bind_addr);
 

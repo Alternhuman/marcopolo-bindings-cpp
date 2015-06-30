@@ -16,7 +16,7 @@
 
 #include "node.hpp"
 
-#define PORT 1338
+#define MARCOBINDINGPORT 1338
 
 #define STD_GROUP "224.0.0.112"
 
