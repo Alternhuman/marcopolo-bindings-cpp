@@ -51,8 +51,8 @@ int utf8_to_wchar(char* input, wchar_t* output, size_t output_len){
 }
 
 uint32_t parseIPV4string(const char* ipAddress) {
-  char ipbytes[4];
-  sscanf(ipAddress, "%d.%d.%d.%d", &ipbytes[3], &ipbytes[2], &ipbytes[1], &ipbytes[0]);
+  int ipbytes[4];
+  sscanf(ipAddress, "%d.%d.%d.%d", (int*)&ipbytes[3], (int*)&ipbytes[2], (int*)&ipbytes[1], (int*)&ipbytes[0]);
   return ipbytes[0] | ipbytes[1] << 8 | ipbytes[2] << 16 | ipbytes[3] << 24;
 }
 
