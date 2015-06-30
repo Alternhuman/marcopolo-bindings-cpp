@@ -17,6 +17,7 @@ INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} )
 
 
 find_package(PkgConfig REQUIRED)
+find_package(RapidJSON)
 
 pkg_search_module(OPENSSL REQUIRED openssl)
 
@@ -29,7 +30,7 @@ endif() #http://stackoverflow.com/a/26534464/2628463
 
 
 #SET(CMAKE_EXE_LINKER_FLAGS "-Wall -O2 -s")
-SET(CMAKE_EXE_LINKER_FLAGS "-g -Wall")
+SET(CMAKE_EXE_LINKER_FLAGS "-Wall -O2")
 ADD_DEFINITIONS(${CMAKE_EXE_LINKER_FLAGS})
 
 ADD_LIBRARY( marcopolo SHARED ${MARCOCPPBINDING_SRC})
