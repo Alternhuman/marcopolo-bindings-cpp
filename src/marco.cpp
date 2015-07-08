@@ -227,8 +227,8 @@ int Marco::utf8_to_wchar(char* input, wchar_t* output, size_t output_len){
 }
 
 int Marco::marco(std::vector<Node>& nodes, int max_nodes, std::vector<std::string> exclude, std::map<std::string, parameter> params, int timeout, int retries){
-	//TODO:const char* kTypeNames[] =  { "Null", "False", "True", "Object", "Array", "String", "Number" };
-		
+	
+
 	timeout = timeout > 0 ? timeout : this->timeout;
 	
 	marco_socket = socket(AF_INET, SOCK_DGRAM, 0);
@@ -260,10 +260,10 @@ int Marco::marco(std::vector<Node>& nodes, int max_nodes, std::vector<std::strin
 	writer.Uint(max_nodes);
 	writer.String("exclude");
 	writer.StartArray();
-	//TODO
+	
 	writer.EndArray();
 	//writer.String("params");
-	//TODO
+	
 	writer.String("timeout");
 	writer.Uint(timeout);
 	writer.String("group");

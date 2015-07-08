@@ -33,8 +33,7 @@
 #define TOKEN_PATH "/.polo/token"
 
 Polo::Polo(int timeout){
-    /*TODO  self.polo_socket.settimeout(TIMEOUT/1000.0)*/
-
+    
 
     const SSL_METHOD *method;
     SSL_CTX *ctx;
@@ -153,7 +152,7 @@ std::string Polo::publish_service(std::string service, std::vector<std::string> 
     char output[str_len];
 
     wchar_to_utf8(wcs, output, str_size);
-    //TODO: watch length
+    
 
     SSL_write(this->wrappedSocket, output, str_len);
 
@@ -192,7 +191,7 @@ std::string Polo::publish_service(std::string service, std::vector<std::string> 
     char to_arr_aux[response];
     strncpy(to_arr_aux, recv_response, response);
     
-    //TODO: It should suffice with the response length
+    
     if(-1 == utf8_to_wchar(to_arr_aux, to_arr, response)){
         perror("Error on conversion");
     }
@@ -271,7 +270,7 @@ int Polo::unpublish_service(std::string service, std::vector<std::string> multic
     char output[str_len];
 
     wchar_to_utf8(wcs, output, str_size);
-    //TODO: watch length
+    
 
     SSL_write(this->wrappedSocket, output, str_len);
 
@@ -310,7 +309,7 @@ int Polo::unpublish_service(std::string service, std::vector<std::string> multic
     char to_arr_aux[response];
     strncpy(to_arr_aux, recv_response, response);
     
-    //TODO: It should suffice with the response length
+    
     if(-1 == utf8_to_wchar(to_arr_aux, to_arr, response)){
         perror("Error on conversion");
     }
@@ -402,7 +401,7 @@ std::string Polo::request_token(const struct passwd *pw_user){
     writer.EndObject();
     writer.EndObject();
 
-    //TODO: avoid redundancy (this snippet is written 3 times at least!)
+    
     std::string json_array_tmp = stringbuffer.GetString();
     std::wstring json_array;
 
@@ -416,8 +415,8 @@ std::string Polo::request_token(const struct passwd *pw_user){
     char output[str_len];
 
     wchar_to_utf8(wcs, output, str_size);
-    //TODO: watch length
-
+    
+    
     SSL_write(this->wrappedSocket, output, str_len);
     
     char recv_response[BUFF_LEN];

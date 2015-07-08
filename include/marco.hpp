@@ -33,7 +33,7 @@ private:
 	int utf8_to_wchar(char* input, wchar_t* output, size_t output_len);
 	int marco_socket;
 	struct sockaddr_in bind_addr;	
-	//TODO: setters, getters
+	
 	int timeout;
 	std::string group;
 	socklen_t size_addr;

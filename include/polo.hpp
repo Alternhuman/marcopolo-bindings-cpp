@@ -36,12 +36,7 @@ public:
     
     std::string publish_service(std::string service, std::vector<std::string> multicast_groups=std::vector<std::string>(), bool permanent=false, bool root=false);
     int unpublish_service(std::string service, std::vector<std::string> multicast_groups=std::vector<std::string>(), bool delete_file=false);
-    /*Service service_info(std::string service);
-    bool has_service(service);
 
-    int set_permanent(std::string service, bool permanent=true);
-
-    int reload_services();*/
 
 private:
     int polo_socket;
