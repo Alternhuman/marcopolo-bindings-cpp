@@ -390,10 +390,10 @@ int Marco::request_for(std::vector<Node>&nodes, std::string service, int max_nod
 		writer.Uint(max_nodes);
 		writer.String("exclude");
 		writer.StartArray();
-		//TODO
+		
 		writer.EndArray();
 		//writer.String("params");
-		//TODO
+		
 		writer.String("timeout");
 		writer.Uint(timeout);
 		writer.String("group");
